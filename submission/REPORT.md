@@ -8,7 +8,7 @@
 - **MSSV:** 2A202602850
 - **Lớp:** K4-L3A
 - **Repository URL:** https://github.com/Tuan-Nguyen-Minhh/K4-L3-DAY13-NguyenMinhTuan-2A202602850-Monitoring-LLMOps
-- **Commit SHA cuối:** `9e53177` (docs: correct final commit SHA)
+- **Commit SHA cuối:** `dbd7d86` (docs: correct final commit SHA)
 - **Challenge ID:** `day13-k4-l3a-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3a-2A202602850`
 
@@ -16,7 +16,7 @@
 
 Điền đúng đường dẫn tới evidence thực tế. Có thể đổi tên hoặc dùng nhiều ảnh nếu cần.
 
-Ghi chú nguồn evidence: `01-03`, `05` là output text của lệnh chạy thật; `04`, `12`, `13`, `14` render từ `data/logs.jsonl` và observations API v2 của Langfuse (kèm file `.json` raw ngay cạnh); `06-11` và `14-incident-trace.png` là ảnh chụp màn hình Langfuse/project cá nhân.
+Ghi chú nguồn evidence: `01-03`, `05` là output text của lệnh chạy thật; `04`, `12`, `13`, `14` render từ `data/logs.jsonl` và observations API v2 của Langfuse (kèm file `.json` raw ngay cạnh); `06-11` là ảnh chụp màn hình Langfuse/project cá nhân.
 
 | Evidence | Đường dẫn |
 |---|---|
@@ -34,6 +34,15 @@ Ghi chú nguồn evidence: `01-03`, `05` là output text của lệnh chạy th�
 | Incident metric | `evidence/12-incident-metric.png` (raw: `12-incident-metric.json`) |
 | Incident log | `evidence/13-incident-log.png` (raw: `13-incident-log.json`) |
 | Incident trace | `evidence/14-incident-trace.png` (span tree cua CID) + `evidence/14-incident-trace-span.png` (raw span tree) + `evidence/14-incident-trace.json` (raw obs) |
+
+## 2b. Liên kết trực tiếp tới source / config / docs
+
+- SLO + error budget: [`config/slo.yaml`](config/slo.yaml)
+- Ba alert + runbook: [`config/alert_rules.yaml`](config/alert_rules.yaml), [`docs/alerts.md`](docs/alerts.md)
+- Dashboard contract: [`config/dashboard.yaml`](config/dashboard.yaml)
+- Source chính: [`app/main.py`](app/main.py), [`app/agent.py`](app/agent.py), [`app/middleware.py`](app/middleware.py), [`app/logging_config.py`](app/logging_config.py), [`app/pii.py`](app/pii.py), [`app/tracing.py`](app/tracing.py), [`app/prompt_management.py`](app/prompt_management.py)
+- Tests: [`tests/`](tests/) (22 tests, gồm `test_pii.py`, `test_chat_observability.py`, `test_tracing_adapter.py`, `test_prompt_management.py`, `test_metrics.py`, `test_dashboard_validator.py`)
+- Commit nộp: xem [`git log`](https://github.com/Tuan-Nguyen-Minhh/K4-L3-DAY13-NguyenMinhTuan-2A202602850-Monitoring-LLMOps/commits) trên remote (SHA cuối ghi ở §1)
 
 ## 3. Kết quả kỹ thuật
 
@@ -122,7 +131,7 @@ vuot nguong 3000ms                    5 request_received                 moi tra
 
 ## 9. Checklist trước khi nộp
 
-- [x] Kết quả và evidence thuộc commit SHA cuối. (`9e53177`)
+- [x] Kết quả và evidence thuộc commit SHA cuối. (`dbd7d86`)
 - [x] Tất cả ảnh/output mở được bằng đường dẫn tương đối. (`01-05`, `11-14` da co; `06-10` cho UI)
 - [x] Incident evidence nối đúng metric → log → trace. (CID `req-74e64029` / trace `f96c6ee7...` / window 09:17:50Z-09:18:05Z)
 - [x] Trace/prompt evidence thuộc project Langfuse cá nhân (`day13-k4-l3a-2A202602850` thay ten project trong moi anh) va khong lo secret (`sk-lf`) hay PII tho. Luu y: Langfuse SDK tu inject `scope.attributes.public_key` (pk-lf, public key khong phai secret) vao metadata cua moi observation nen anh 06/08 hien `pk-lf-...`.
