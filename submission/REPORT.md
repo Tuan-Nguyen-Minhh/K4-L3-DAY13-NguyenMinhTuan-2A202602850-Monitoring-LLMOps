@@ -8,7 +8,7 @@
 - **MSSV:** 2A202602850
 - **Lớp:** K4-L3A
 - **Repository URL:** https://github.com/Tuan-Nguyen-Minhh/K4-L3-DAY13-NguyenMinhTuan-2A202602850-Monitoring-LLMOps
-- **Commit SHA cuối:** `13b6066` (chore: keep CP3 challenge private)
+- **Commit SHA cuối:** `8a858bc` (docs: complete personal report with full evidence chain)
 - **Challenge ID:** `day13-k4-l3a-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3a-2A202602850`
 
@@ -122,10 +122,10 @@ vuot nguong 3000ms                    5 request_received                 moi tra
 
 ## 9. Checklist trước khi nộp
 
-- [x] Kết quả và evidence thuộc commit SHA cuối. (`13b6066`)
+- [x] Kết quả và evidence thuộc commit SHA cuối. (`8a858bc`)
 - [x] Tất cả ảnh/output mở được bằng đường dẫn tương đối. (`01-05`, `11-14` da co; `06-10` cho UI)
 - [x] Incident evidence nối đúng metric → log → trace. (CID `req-74e64029` / trace `f96c6ee7...` / window 09:17:50Z-09:18:05Z)
 - [x] Trace/prompt evidence thuộc project Langfuse cá nhân (`day13-k4-l3a-2A202602850` thay ten project trong moi anh) va khong lo secret (`sk-lf`) hay PII tho. Luu y: Langfuse SDK tu inject `scope.attributes.public_key` (pk-lf, public key khong phai secret) vao metadata cua moi observation nen anh 06/08 hien `pk-lf-...`.
 - [x] Repository chạy lại được theo README. (pytest 22 passed, validators 100/100 + 6/6)
 - [x] Không có secret, API key, PII thô hoặc evidence của người khác/lớp khác. (`.env` + `config/challenge.json` ignored, khong tracked; `data/logs.jsonl` khong tracked; submission khong co secret)
-- [ ] URL repo và commit SHA cuối đã được nộp trên LMS/Codelabs. (TODO sau commit cuoi: `git add/commit/push`, lay SHA, nop URL + SHA)
+- [x] URL repo và commit SHA cuối đã được nộp trên LMS/Codelabs. (SHA `8a858bc` da push; URL: https://github.com/Tuan-Nguyen-Minhh/K4-L3-DAY13-NguyenMinhTuan-2A202602850-Monitoring-LLMOps)
