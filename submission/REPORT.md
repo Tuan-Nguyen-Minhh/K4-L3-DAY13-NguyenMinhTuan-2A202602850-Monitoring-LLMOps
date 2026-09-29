@@ -8,7 +8,7 @@
 - **MSSV:** 2A202602850
 - **Lớp:** K4-L3A
 - **Repository URL:** https://github.com/Tuan-Nguyen-Minhh/K4-L3-DAY13-NguyenMinhTuan-2A202602850-Monitoring-LLMOps
-- **Commit SHA cuối:** `2fedb5c` (docs: update final commit SHA)
+- **Commit SHA cuối:** `95d6b11` (docs: correct final commit SHA)
 - **Challenge ID:** `day13-k4-l3a-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3a-2A202602850`
 
@@ -33,7 +33,7 @@ Ghi chú nguồn evidence: `01-03`, `05` là output text của lệnh chạy th�
 | Dashboard runtime | `evidence/11-dashboard-overview.png` |
 | Incident metric | `evidence/12-incident-metric.png` (raw: `12-incident-metric.json`) |
 | Incident log | `evidence/13-incident-log.png` (raw: `13-incident-log.json`) |
-| Incident trace | `evidence/14-incident-trace-span.png` (span tree cua CID) + `evidence/14-incident-trace.png` (anh UI) + `evidence/14-incident-trace.json` (raw obs) |
+| Incident trace | `evidence/14-incident-trace.png` (span tree cua CID) + `evidence/14-incident-trace-span.png` (raw span tree) + `evidence/14-incident-trace.json` (raw obs) |
 
 ## 3. Kết quả kỹ thuật
 
@@ -122,7 +122,7 @@ vuot nguong 3000ms                    5 request_received                 moi tra
 
 ## 9. Checklist trước khi nộp
 
-- [x] Kết quả và evidence thuộc commit SHA cuối. (`2fedb5c`)
+- [x] Kết quả và evidence thuộc commit SHA cuối. (`95d6b11`)
 - [x] Tất cả ảnh/output mở được bằng đường dẫn tương đối. (`01-05`, `11-14` da co; `06-10` cho UI)
 - [x] Incident evidence nối đúng metric → log → trace. (CID `req-74e64029` / trace `f96c6ee7...` / window 09:17:50Z-09:18:05Z)
 - [x] Trace/prompt evidence thuộc project Langfuse cá nhân (`day13-k4-l3a-2A202602850` thay ten project trong moi anh) va khong lo secret (`sk-lf`) hay PII tho. Luu y: Langfuse SDK tu inject `scope.attributes.public_key` (pk-lf, public key khong phai secret) vao metadata cua moi observation nen anh 06/08 hien `pk-lf-...`.
