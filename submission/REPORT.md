@@ -8,7 +8,7 @@
 - **MSSV:** 2A202602850
 - **Lớp:** K4-L3A
 - **Repository URL:** https://github.com/Tuan-Nguyen-Minhh/K4-L3-DAY13-NguyenMinhTuan-2A202602850-Monitoring-LLMOps
-- **Commit SHA cuối:** `95d6b11` (docs: correct final commit SHA)
+- **Commit SHA cuối:** `9e53177` (docs: correct final commit SHA)
 - **Challenge ID:** `day13-k4-l3a-monitoring-llmops-v1`
 - **Tên project Langfuse cá nhân:** `day13-k4-l3a-2A202602850`
 
@@ -103,7 +103,7 @@ vuot nguong 3000ms                    5 request_received                 moi tra
 **Bước 3 — Trace ID và span gây ảnh hưởng:**
 - Trace **`f96c6ee740befff7bcc964a542a3ce20`** (filter `metadata.correlation_id=req-74e64029`) co 3 observations: root `lab-agent-run` (AGENT) `2.658s` = `retrieval` (RETRIEVER) **`2.506s` (~94%)** + `llm-generation` (GENERATION) `0.152s` binh thuong.
 - Ca 4 trace con lai lap lai pattern (`retrieval` 2.502-2.506s, `generation` 0.152-0.154s): `081ecfd418bd1bc9a758624c36485963`, `ea7af7fb8eb092d156edc9ac3015dd70`, `f61b4911bf0627714fee85551d75c775`, `46664657be1dd6d7161ec0ab06ce77a1`.
-- Evidence: `evidence/14-incident-trace-span.png` (span tree + 4 trace anh em), `evidence/07-trace-waterfall.png` (span tree tren UI), `evidence/14-incident-trace.png` (danh sach observations trong UI), `evidence/14-incident-trace.json` (raw observations tu API v2).
+- Evidence: `evidence/14-incident-trace.png` (span tree + 4 trace anh em), `evidence/07-trace-waterfall.png` (span tree tren UI), `evidence/14-incident-trace.json` (raw observations tu API v2).
 
 **Bước 4 — Root cause và hành động xử lý:**
 - **Root cause:** `STATE["rag_slow"]=True` khien `app/mock_rag.py:retrieve()` `time.sleep(2.5)` moi request; ham dong bo lai chay trong endpoint async nen block event loop -> latency server ~2.65s + hieu ung xep hang client 10-15s. Ba bang chung cung chi ve mot nguyen nhan: metric (chi latency tang), log (latency_ms ~2653, khong loi), trace (span retrieval chiem ~94%).
@@ -122,7 +122,7 @@ vuot nguong 3000ms                    5 request_received                 moi tra
 
 ## 9. Checklist trước khi nộp
 
-- [x] Kết quả và evidence thuộc commit SHA cuối. (`95d6b11`)
+- [x] Kết quả và evidence thuộc commit SHA cuối. (`9e53177`)
 - [x] Tất cả ảnh/output mở được bằng đường dẫn tương đối. (`01-05`, `11-14` da co; `06-10` cho UI)
 - [x] Incident evidence nối đúng metric → log → trace. (CID `req-74e64029` / trace `f96c6ee7...` / window 09:17:50Z-09:18:05Z)
 - [x] Trace/prompt evidence thuộc project Langfuse cá nhân (`day13-k4-l3a-2A202602850` thay ten project trong moi anh) va khong lo secret (`sk-lf`) hay PII tho. Luu y: Langfuse SDK tu inject `scope.attributes.public_key` (pk-lf, public key khong phai secret) vao metadata cua moi observation nen anh 06/08 hien `pk-lf-...`.
