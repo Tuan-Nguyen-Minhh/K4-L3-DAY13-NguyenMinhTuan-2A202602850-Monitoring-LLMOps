@@ -1,0 +1,162 @@
+{
+  "representative_correlation_id": "req-74e64029",
+  "representative_trace_id": "f96c6ee740befff7bcc964a542a3ce20",
+  "verdict": "retrieval ~2.5s chiem ~94% root latency, llm-generation ~0.15s binh thuong -> span retrieval la nguyen nhan",
+  "traces": {
+    "req-bd17da43": {
+      "trace_id": [
+        "081ecfd418bd1bc9a758624c36485963"
+      ],
+      "observations": [
+        {
+          "name": "retrieval",
+          "type": "RETRIEVER",
+          "trace_id": "081ecfd418bd1bc9a758624c36485963",
+          "start": "2026-09-29T09:17:50.889000+00:00",
+          "end": "2026-09-29T09:17:53.391000+00:00",
+          "latency_s": 2.502
+        },
+        {
+          "name": "lab-agent-run",
+          "type": "AGENT",
+          "trace_id": "081ecfd418bd1bc9a758624c36485963",
+          "start": "2026-09-29T09:17:50.889000+00:00",
+          "end": "2026-09-29T09:17:55.198000+00:00",
+          "latency_s": 4.309
+        },
+        {
+          "name": "llm-generation",
+          "type": "GENERATION",
+          "trace_id": "081ecfd418bd1bc9a758624c36485963",
+          "start": "2026-09-29T09:17:55.044000+00:00",
+          "end": "2026-09-29T09:17:55.198000+00:00",
+          "latency_s": 0.154
+        }
+      ]
+    },
+    "req-049fcdfc": {
+      "trace_id": [
+        "ea7af7fb8eb092d156edc9ac3015dd70"
+      ],
+      "observations": [
+        {
+          "name": "lab-agent-run",
+          "type": "AGENT",
+          "trace_id": "ea7af7fb8eb092d156edc9ac3015dd70",
+          "start": "2026-09-29T09:17:55.198000+00:00",
+          "end": "2026-09-29T09:17:57.855000+00:00",
+          "latency_s": 2.657
+        },
+        {
+          "name": "retrieval",
+          "type": "RETRIEVER",
+          "trace_id": "ea7af7fb8eb092d156edc9ac3015dd70",
+          "start": "2026-09-29T09:17:55.198000+00:00",
+          "end": "2026-09-29T09:17:57.703000+00:00",
+          "latency_s": 2.505
+        },
+        {
+          "name": "llm-generation",
+          "type": "GENERATION",
+          "trace_id": "ea7af7fb8eb092d156edc9ac3015dd70",
+          "start": "2026-09-29T09:17:57.703000+00:00",
+          "end": "2026-09-29T09:17:57.855000+00:00",
+          "latency_s": 0.152
+        }
+      ]
+    },
+    "req-299c06ac": {
+      "trace_id": [
+        "f61b4911bf0627714fee85551d75c775"
+      ],
+      "observations": [
+        {
+          "name": "retrieval",
+          "type": "RETRIEVER",
+          "trace_id": "f61b4911bf0627714fee85551d75c775",
+          "start": "2026-09-29T09:17:57.855000+00:00",
+          "end": "2026-09-29T09:18:00.360000+00:00",
+          "latency_s": 2.505
+        },
+        {
+          "name": "lab-agent-run",
+          "type": "AGENT",
+          "trace_id": "f61b4911bf0627714fee85551d75c775",
+          "start": "2026-09-29T09:17:57.855000+00:00",
+          "end": "2026-09-29T09:18:00.512000+00:00",
+          "latency_s": 2.657
+        },
+        {
+          "name": "llm-generation",
+          "type": "GENERATION",
+          "trace_id": "f61b4911bf0627714fee85551d75c775",
+          "start": "2026-09-29T09:18:00.360000+00:00",
+          "end": "2026-09-29T09:18:00.512000+00:00",
+          "latency_s": 0.152
+        }
+      ]
+    },
+    "req-f988892d": {
+      "trace_id": [
+        "46664657be1dd6d7161ec0ab06ce77a1"
+      ],
+      "observations": [
+        {
+          "name": "retrieval",
+          "type": "RETRIEVER",
+          "trace_id": "46664657be1dd6d7161ec0ab06ce77a1",
+          "start": "2026-09-29T09:18:00.512000+00:00",
+          "end": "2026-09-29T09:18:03.018000+00:00",
+          "latency_s": 2.506
+        },
+        {
+          "name": "lab-agent-run",
+          "type": "AGENT",
+          "trace_id": "46664657be1dd6d7161ec0ab06ce77a1",
+          "start": "2026-09-29T09:18:00.512000+00:00",
+          "end": "2026-09-29T09:18:03.170000+00:00",
+          "latency_s": 2.658
+        },
+        {
+          "name": "llm-generation",
+          "type": "GENERATION",
+          "trace_id": "46664657be1dd6d7161ec0ab06ce77a1",
+          "start": "2026-09-29T09:18:03.018000+00:00",
+          "end": "2026-09-29T09:18:03.170000+00:00",
+          "latency_s": 0.152
+        }
+      ]
+    },
+    "req-74e64029": {
+      "trace_id": [
+        "f96c6ee740befff7bcc964a542a3ce20"
+      ],
+      "observations": [
+        {
+          "name": "lab-agent-run",
+          "type": "AGENT",
+          "trace_id": "f96c6ee740befff7bcc964a542a3ce20",
+          "start": "2026-09-29T09:18:03.170000+00:00",
+          "end": "2026-09-29T09:18:05.828000+00:00",
+          "latency_s": 2.658
+        },
+        {
+          "name": "retrieval",
+          "type": "RETRIEVER",
+          "trace_id": "f96c6ee740befff7bcc964a542a3ce20",
+          "start": "2026-09-29T09:18:03.170000+00:00",
+          "end": "2026-09-29T09:18:05.676000+00:00",
+          "latency_s": 2.506
+        },
+        {
+          "name": "llm-generation",
+          "type": "GENERATION",
+          "trace_id": "f96c6ee740befff7bcc964a542a3ce20",
+          "start": "2026-09-29T09:18:05.676000+00:00",
+          "end": "2026-09-29T09:18:05.828000+00:00",
+          "latency_s": 0.152
+        }
+      ]
+    }
+  }
+}

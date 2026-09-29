@@ -1,0 +1,22 @@
+PII redaction proof (fake test data only, no real user data)
+=======================================================
+Function: app/pii.py:scrub_text, wired in app/logging_config.py:scrub_event
+(BEFORE JsonlFileProcessor/JSONRenderer) + app/pii.py:summarize_text
+(second layer for message_preview/answer_preview).
+
+Live check on this repo:
+- Input : 'lien he test.user01@example.com nhe'
+  Output: 'lien he [REDACTED_EMAIL] nhe'
+- Input : 'sdt 0912345678 goi lai'
+  Output: 'sdt [REDACTED_PHONE_VN] goi lai'
+- Input : 'cccd 012345678901'
+  Output: 'cccd [REDACTED_CCCD]'
+- Input : 'the 4111111111111111'
+  Output: 'the [REDACTED_CREDIT_CARD]'
+
+Validator on current data/logs.jsonl (63 records, incl. CP3 window):
+- Potential PII leaks detected: 0
+- Estimated Score: 100/100 (see evidence/02-log-validator.txt)
+
+Conclusion: email / phone_vn / cccd / credit_card patterns are all
+redacted before the log is serialized or written to file.

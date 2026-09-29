@@ -7,7 +7,13 @@ primary_slo:
     total_event: 'event == "request_received"'
   target_percent: 99.5
   error_budget_percent: 0.5
-  note: Học viên phải giải thích hoặc điều chỉnh ngưỡng bằng baseline của mình.
+  note: >-
+    Giu nguong 3000ms theo dashboard panel latency (threshold p95 lte 3000).
+    Baseline 12 response: p50 400ms, p95 ~5212ms do 1 cold-start outlier, error 0/12,
+    quality TB 0.88, cost TB $0.0019/req. P50 on dinh <500ms nen 3000ms du bao tail latency
+    (rag_slow 2.5s + LLM) ma khong qua chat. Target 99.5%/28d => error budget 0.5%:
+    1000 req duoc phep toi da 5 req cham (>3000ms) hoac failed; 10k req/ngay => 50 req.
+    Budget cham het som la tin hieu page truoc khi vi pham SLO tuan.
 guardrails:
   error_rate_pct_max: 2
   daily_cost_usd_max: 2.5

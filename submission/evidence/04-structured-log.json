@@ -1,0 +1,44 @@
+{
+  "correlation_id": "req-74e64029",
+  "note": "Cap request_received + response_sent: du timestamp(ts), event, correlation_id, model, env, feature, latency",
+  "events": [
+    {
+      "service": "api",
+      "payload": {
+        "message_preview": "Describe how to prove a slow span is the root cause."
+      },
+      "event": "request_received",
+      "user_id_hash": "ed72e61117f6",
+      "env": "dev",
+      "session_id": "k4-l3a-challenge-s05",
+      "feature": "monitoring",
+      "correlation_id": "req-74e64029",
+      "model": "claude-sonnet-4-5",
+      "level": "info",
+      "ts": "2026-09-29T09:18:03.170102Z"
+    },
+    {
+      "service": "api",
+      "latency_ms": 2653,
+      "ttft_ms": 50,
+      "tokens_in": 35,
+      "tokens_out": 158,
+      "cost_usd": 0.002475,
+      "quality_score": 0.8,
+      "tool_name": "retrieval",
+      "tool_success": true,
+      "payload": {
+        "answer_preview": "Starter answer. You should improve this output logic and add better quality chec..."
+      },
+      "event": "response_sent",
+      "user_id_hash": "ed72e61117f6",
+      "env": "dev",
+      "session_id": "k4-l3a-challenge-s05",
+      "feature": "monitoring",
+      "correlation_id": "req-74e64029",
+      "model": "claude-sonnet-4-5",
+      "level": "info",
+      "ts": "2026-09-29T09:18:05.828235Z"
+    }
+  ]
+}
